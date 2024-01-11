@@ -1,0 +1,13 @@
+n = 5
+if n == 1:
+    result = 1
+elif n == 2:
+    result = 2
+else:
+    ways = [0] * (n + 1)
+    ways[1] = 1
+    ways[2] = 2 
+    for i in range(3, n + 1):
+        ways[i] = ways[i - 1] + ways[i - 2]
+    result = ways[n]
+print(f"There are {result} distinct ways to climb {n} steps.")
